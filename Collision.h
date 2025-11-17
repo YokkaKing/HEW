@@ -24,7 +24,7 @@
 using namespace DirectX;
 
 #include"field.h"
-#include"ball.h"
+#include"player.h"
 
 enum COLLISION_HIT
 {
@@ -36,6 +36,6 @@ enum COLLISION_HIT
 	HIT_WALL_3,		// •Ç‚É-X‚©‚ç“–‚½‚Á‚½
 };
 
-FLOAT BallField_Collision();
+FLOAT PlayerField_Collision();
 
 #endif // COLLISION_H

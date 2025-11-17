@@ -14,16 +14,12 @@
 #include"Game.h"
 #include"keyboard.h"
 
-#include"player.h"
-#include"Block.h"
 #include"field.h"
 #include"Effect.h"
-#include"score.h"
 #include"Audio.h"
 
-#include"Polygon3D.h"
 #include"camera.h"
-#include"ball.h"
+#include"player.h"
 
 #include"direct3d.h"
 
@@ -36,7 +32,7 @@ static	int		g_BgmID = NULL;	//サウンド管理ID
 
 void Game_Initialize(ID3D11Device* pDevice, ID3D11DeviceContext* pContext)
 {
-	Ball_Initialize(pDevice, pContext);
+	Player_Initialize(pDevice, pContext);
 	Field_Initialize(pDevice, pContext);		// フィールドの初期化
 
 	Camera_Initialize();						// カメラの初期化
@@ -56,7 +52,7 @@ void Game_Initialize(ID3D11Device* pDevice, ID3D11DeviceContext* pContext)
 
 void Game_Finalize()
 {
-	Ball_Finalize();
+	Player_Finalize();
 	Field_Finalize();	// フィールドの終了処理
 	Camera_Finalize();
 }
@@ -64,7 +60,7 @@ void Game_Finalize()
 void Game_Update()
 {
 	Field_Update();
-	Ball_Update();
+	Player_Update();
 	Camera_Update();
 }
 
@@ -80,7 +76,7 @@ void Game_Draw()
 	Camera_Draw();			// 一番最初に呼ぶ
 	// ↓はカメラの行列を使ってdrawするから、cameraは最初に呼ぶ
 	Field_Draw();			// マップを表示
-	Ball_Draw();
+	Player_Draw();
 
 	SetDepthTest(FALSE);	// 深度OFF
 	Light.SetEnable(FALSE);			// ライティングON

@@ -15,14 +15,11 @@
 #include <algorithm>			//
 #include "direct3d.h"			//
 #include "shader.h"
-#include "polygon.h"
 #include "field.h"
 #include "sprite.h"
 #include "keyboard.h"
 #include "player.h"
-#include "block.h"
 #include "Effect.h"
-#include "score.h"
 
 #include "Manager.h"
 #include "Audio.h"	//<<<<<<<<<<<<<’Ç‰Á

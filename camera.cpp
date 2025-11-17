@@ -12,14 +12,14 @@
 #include"camera.h"
 #include"keyboard.h"
 #include"direct3d.h"
-#include"ball.h"
+#include"player.h"
 
 //================================================================
 //	グローバル変数
 //================================================================
 static CAMERA CameraObject;
 
-XMFLOAT3 g_BallPosOld;
+XMFLOAT3 g_PlayerPosOld;
 
 // 関数四天王
 void Camera_Initialize()
@@ -35,7 +35,7 @@ void Camera_Initialize()
 	CameraObject.NearClip = 0.5f;
 	CameraObject.FarClip = 1000.0f;
 
-	g_BallPosOld = GetBallPosition();
+	g_PlayerPosOld = GetPlayerPosition();
 }
 void Camera_Finalize()
 {
@@ -44,13 +44,13 @@ void Camera_Finalize()
 void Camera_Update()
 {
 	// ボールを注視点として設定
-	XMFLOAT3 pos = g_BallPosOld;		// 前フレームのボールの座標
-	g_BallPosOld = GetBallPosition();	// 現在のボールの座標
+	XMFLOAT3 pos = g_PlayerPosOld;		// 前フレームのボールの座標
+	g_PlayerPosOld = GetPlayerPosition();	// 現在のボールの座標
 
 	// 前回のボールと現在のボールの座標の差分
-	pos.x = g_BallPosOld.x - pos.x;
-	pos.y = g_BallPosOld.y - pos.y;
-	pos.z = g_BallPosOld.z - pos.z;
+	pos.x = g_PlayerPosOld.x - pos.x;
+	pos.y = g_PlayerPosOld.y - pos.y;
+	pos.z = g_PlayerPosOld.z - pos.z;
 
 	// カメラの移動 ボールと同じ動きをする
 	/*pos.x = CameraObject.AtPosition.x - CameraObject.Position.x;
@@ -64,9 +64,9 @@ void Camera_Update()
 	CameraObject.Position.z += pos.z;
 
 	// 注視点としてセット
-	CameraObject.AtPosition.x = g_BallPosOld.x;
-	CameraObject.AtPosition.y = g_BallPosOld.y;
-	CameraObject.AtPosition.z = g_BallPosOld.z;
+	CameraObject.AtPosition.x = g_PlayerPosOld.x;
+	CameraObject.AtPosition.y = g_PlayerPosOld.y;
+	CameraObject.AtPosition.z = g_PlayerPosOld.z;
 
 	// Positionはカメラ自体が動いている
 	// AtPositionはカメラの見ている場所が動いている
