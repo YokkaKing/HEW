@@ -85,21 +85,20 @@ struct Vertex3D
 class LIGHT
 {
 public:
-	bool Enable;		// ライティングスイッチ
-	bool dummy[3];
-	XMFLOAT4 Direction;	// 光の方向
-	XMFLOAT4 Diffuse;	// 光の色
-	XMFLOAT4 Ambient;	// 環境光の色
+	BOOL	Enable;			//ライティングスイッチ
+	BOOL	dummy[3];
+	XMFLOAT4	Direction;//光の方向
+	XMFLOAT4	Diffuse;	//光の色
+	XMFLOAT4	Ambient;	//環境光の色
 };
-
 class LIGHT_OBJECT
 {
 public:
-	LIGHT Light;	// ライト構造体
-	void SetEnable(bool b) { Light.Enable = b; }
-	void SetDirection(XMFLOAT4 d) { Light.Direction = d; }
-	void SetDiffuse(XMFLOAT4 d) { Light.Diffuse = d; }
-	void SetAmbient(XMFLOAT4 a) { Light.Ambient = a; }
+	LIGHT	Light;	//ライト構造体
+	void	SetEnable(bool b) { Light.Enable = b; }
+	void	SetDirection(XMFLOAT4 d) { Light.Direction = d; }
+	void	SetDiffuse(XMFLOAT4 d) { Light.Diffuse = d; }
+	void	SetAmbient(XMFLOAT4 a) { Light.Ambient = a; }
 };
 
 

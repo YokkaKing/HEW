@@ -37,17 +37,21 @@ void Game_Initialize(ID3D11Device* pDevice, ID3D11DeviceContext* pContext)
 
 	Camera_Initialize();						// カメラの初期化
 	
-	XMFLOAT4 para;	// 光の色
-	para = XMFLOAT4(0.4f, 0.4f, 0.4f, 1.0f);	// 環境光の色
+	//ライト初期化
+	XMFLOAT4	para;
+
+	para = XMFLOAT4(0.4f, 0.4f, 0.4f, 1.0f);//環境光の色
 	Light.SetAmbient(para);
-	para = XMFLOAT4(0.6f, 0.6f, 0.6f, 1.0f);	// 光の色
+
+	para = XMFLOAT4(0.6f, 0.6f, 0.6f, 1.0f);//光の色
 	Light.SetDiffuse(para);
-	para = XMFLOAT4(0.5f, -1.0f, 0.0f, 1.0f);	// 光の方向
-	float len = sqrtf(para.x * para.x + para.y * para.y + para.z * para.z);
+
+	para = XMFLOAT4(0.5f, -1.0f, 0.0f, 1.0f);//光方向
+	float	len = sqrtf(para.x * para.x + para.y * para.y + para.z * para.z);
 	para.x /= len;
 	para.y /= len;
 	para.z /= len;
-	Light.SetDirection(para);	// 光の方向(正規化済)
+	Light.SetDirection(para);//光の方向（正規化済）
 }
 
 void Game_Finalize()
@@ -69,18 +73,18 @@ void Game_Draw()
 //================================================================
 //	3Dを表示
 //================================================================
-	Light.SetEnable(TRUE);			// ライティングON
-	Shader_SetLight(Light.Light);	// ライト構造体をシェーダーへセット
-	SetDepthTest(TRUE);		// 深度ON
+	Light.SetEnable(TRUE);			//ライティングON
+	Shader_SetLight(Light.Light);	//ライト構造体をシェーダーへセット
+	SetDepthTest(TRUE);
 
-	Camera_Draw();			// 一番最初に呼ぶ
-	// ↓はカメラの行列を使ってdrawするから、cameraは最初に呼ぶ
-	Field_Draw();			// マップを表示
+	Camera_Draw();		//Drawの最初で呼ぶ！
+	Field_Draw();
 	Player_Draw();
 
-	SetDepthTest(FALSE);	// 深度OFF
-	Light.SetEnable(FALSE);			// ライティングON
-	Shader_SetLight(Light.Light);	// ライト構造体をシェーダーへセット
+	//2D描画
+	Light.SetEnable(FALSE);			//ライティングOFF
+	Shader_SetLight(Light.Light);	//ライト構造体をシェーダーへセット
+	SetDepthTest(FALSE);
 
 //================================================================
 //	2Dを表示

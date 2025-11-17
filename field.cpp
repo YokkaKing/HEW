@@ -43,25 +43,25 @@ static Vertex3D boxVertexData[BOX_NUM_VERTEX] =
 //================================================================
 	{	// 頂点0 LEFT-TOP 左上
 		XMFLOAT3(-0.5f, 0.5f, -0.5f),		// 座標
-		XMFLOAT3(0.0f, 0.0f, 1.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点1 RIGHT-TOP 右上
 		XMFLOAT3(0.5f, 0.5f, -0.5f),			// 座標
-		XMFLOAT3(0.0f, 0.0f, 1.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点2 LEFT-BOTTOM 左下
 		XMFLOAT3(-0.5f, -0.5f, -0.5f),		// 座標
-		XMFLOAT3(0.0f, 0.0f, 1.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 1.0f)				// テクスチャ座標
 	},
 	{	// 頂点3 RIGHT-TOP 右下
 		XMFLOAT3(0.5f, -0.5f, -0.5f),			// 座標
-		XMFLOAT3(0.0f, 0.0f, 1.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 1.0f)				// テクスチャ座標
 	},
@@ -71,25 +71,25 @@ static Vertex3D boxVertexData[BOX_NUM_VERTEX] =
 //================================================================
 	{	// 頂点4 左上
 		XMFLOAT3(0.5f, 0.5f, -0.5f),			// 座標
-		XMFLOAT3(-1.0f, 0.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点5 右上
 		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 座標
-		XMFLOAT3(-1.0f, 0.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点6 左下
 		XMFLOAT3(0.5f, -0.5f, -0.5f),			// 座標
-		XMFLOAT3(-1.0f, 0.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 1.0f)				// テクスチャ座標
 	},
 	{	// 頂点7 右下
 		XMFLOAT3(0.5f, -0.5f, 0.5f),			// 座標
-		XMFLOAT3(-1.0f, 0.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 1.0f)				// テクスチャ座標
 	},
@@ -99,25 +99,25 @@ static Vertex3D boxVertexData[BOX_NUM_VERTEX] =
 //================================================================
 	{	// 頂点8 左上
 		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 座標
-		XMFLOAT3(0.0f, 0.0f, -1.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点9 右上
 		XMFLOAT3(-0.5f, 0.5f, 0.5f),		// 座標
-		XMFLOAT3(0.0f, 0.0f, -1.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点10 左下
 		XMFLOAT3(0.5f, -0.5f, 0.5f),			// 座標
-		XMFLOAT3(0.0f, 0.0f, -1.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 1.0f)				// テクスチャ座標
 	},
 	{	// 頂点11 右下
 		XMFLOAT3(-0.5f, -0.5f, 0.5f),		// 座標
-		XMFLOAT3(0.0f, 0.0f, -1.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 1.0f)				// テクスチャ座標
 	},
@@ -127,25 +127,25 @@ static Vertex3D boxVertexData[BOX_NUM_VERTEX] =
 //================================================================
 	{	// 頂点12 左上
 		XMFLOAT3(-0.5f, 0.5f, 0.5f),		// 座標
-		XMFLOAT3(1.0f, 0.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点13 右上
 		XMFLOAT3(-0.5f, 0.5f, -0.5f),		// 座標
-		XMFLOAT3(1.0f, 0.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点14 左下
 		XMFLOAT3(-0.5f, -0.5f, 0.5f),		// 座標
-		XMFLOAT3(1.0f, 0.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 1.0f)				// テクスチャ座標
 	},
 	{	// 頂点15 右下
 		XMFLOAT3(-0.5f, -0.5f, -0.5f),		// 座標
-		XMFLOAT3(1.0f, 0.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 1.0f)				// テクスチャ座標
 	},
@@ -155,25 +155,25 @@ static Vertex3D boxVertexData[BOX_NUM_VERTEX] =
 //================================================================
 	{	// 頂点16 左上
 		XMFLOAT3(-0.5f, 0.5f, 0.5f),		// 座標
-		XMFLOAT3(0.0f, -1.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点17 右上
 		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 座標
-		XMFLOAT3(0.0f, -1.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 0.0f)				// テクスチャ座標
 	},
 	{	// 頂点18 左下
 		XMFLOAT3(-0.5f, 0.5f, -0.5f),		// 座標
-		XMFLOAT3(0.0f, -1.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 0.25f)				// テクスチャ座標
 	},
 	{	// 頂点19 右下
 		XMFLOAT3(0.5f, 0.5f, -0.5f),		// 座標
-		XMFLOAT3(0.0f, -1.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 0.25f)				// テクスチャ座標
 	},
@@ -183,25 +183,25 @@ static Vertex3D boxVertexData[BOX_NUM_VERTEX] =
 //================================================================
 	{	// 頂点20 左上
 		XMFLOAT3(-0.5f, -0.5f, -0.5f),		// 座標
-		XMFLOAT3(0.0f, 1.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 0.75f)				// テクスチャ座標
 	},
 	{	// 頂点21 右上
 		XMFLOAT3(0.5f, -0.5f, -0.5f),		// 座標
-		XMFLOAT3(0.0f, 1.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 0.75f)				// テクスチャ座標
 	},
 	{	// 頂点22 左下
-	XMFLOAT3(-0.5f, -0.5f, 0.5f),		// 座標
-		XMFLOAT3(0.0f, 1.0f, 0.0f),			// 法線
+		XMFLOAT3(-0.5f, -0.5f, 0.5f),		// 座標
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(0.0f, 1.0f)				// テクスチャ座標
 	},
 	{	// 頂点23 右下
 		XMFLOAT3(0.5f, -0.5f, 0.5f),			// 座標
-		XMFLOAT3(0.0f, 1.0f, 0.0f),			// 法線
+		XMFLOAT3(0.5f, 0.5f, 0.5f),			// 法線
 		XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),	// 色
 		XMFLOAT2(1.0f, 1.0f)				// テクスチャ座標
 	},

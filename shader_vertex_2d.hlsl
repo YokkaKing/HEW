@@ -16,25 +16,24 @@ cbuffer Buffer1 : register(b1)
 }
 struct LIGHT
 {
-    // C++側のLIGHT構造体と全く同じ順番で書け
-    // 全く同じようにコピーされるから違ってたらイかれる
     bool Enable;
     bool3 dummy;
     float4 Direction;
     float4 Diffuse;
-    float Ambient;
+    float4 Ambient;
 };
 cbuffer Buffer2 : register(b2)
 {
-    LIGHT Light; // C言語から受け取る器を作る
+    LIGHT   Light; //C言語から渡されたデータが入っている
 }
+
 
 //入力用頂点構造体
 struct VS_INPUT
-{ //              V コロン！
-    float4 posL : POSITION0;    //頂点座標 オーでなくゼロ！
-    float4 normal : NORMAL0;    // 法線
-    float4  color : COLOR0;     //頂点カラー（R,G,B,A）
+{//              V コロン！
+    float4  posL : POSITION0; //頂点座標 オーでなくゼロ！
+    float4 normal : NORMAL0; //法線　オーでなくゼロ！
+    float4  color : COLOR0;   //頂点カラー（R,G,B,A）
     float2 texcoord : TEXCOORD0;
 };
 
@@ -57,22 +56,31 @@ VS_OUTPUT main(VS_INPUT vs_in)
 
     vs_out.texcoord = vs_in.texcoord;
 
-    // ライティング
-    if (Light.Enable)
+    //ライティング
+    if(Light.Enable == true)
     {
-        // 全部ベクトルだと思え
-        // 法線をワールド変換
-        float4 normal = float4(vs_in.normal.xyz, 0.0f); // 法線をコピー
-        normal = mul(normal, World);    // normalをWorld行列で変換
-        normal = normalize(normal);     // normalを正規化する
+        //法線をワールド変換
+        float4 normal = float4(vs_in.normal.xyz, 0.0f);//法線をコピー
+        normal = mul(normal, World);    //normalをWorld行列で変換
+        normal = normalize(normal);     //normalを正規化する
         
-        // ライティング
+        //ライティング
         float light = -dot(normal.xyz, Light.Direction.xyz);
         light = saturate(light);
-        vs_out.color.rgb *= light; // 頂点の明るさを調節(最高で元の色、最低で真っ黒)
-        vs_out.color.rgb += Light.Ambient;
-    }
-    
+        vs_out.color.rgb *= light;
+        vs_out.color.rgb += Light.Ambient.rgb;
+     }
+      
     //結果を出力する
     return vs_out;
 }
+
+
+
+////=============================================================================
+//// 頂点シェーダ
+////=============================================================================
+//float4 main(in float4 posL : POSITION0 ) : SV_POSITION
+//{
+//	return mul(posL, mtx);//頂点座標＊mtx（変換行列）
+//}
